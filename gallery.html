@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container{
+            display: flex;
+        }
+        .img{
+            background-color: #c6eacf;
+            width: 600px;
+            height: 300px;
+            text-align: center;
+            margin-right: 15px;
+            margin-left: 15px;
+            border-radius: 50px;
+            box-shadow: 5px 5px 10px #106542;
+            transition-duration: 0.4s;
+            border: solid;
+            border-color: #106542;
+        }
+        .img:hover{
+            border-radius: 75px;
+            box-shadow: 5px 5px 10px #0b1a13;
+            border-color: #083220;
+            opacity: 0.3;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header><h1>My Farm Gallery:</h1></header>
+
+<div class="container">
+    <div class="img">
+        <figure>
+            <a href="healthy_sugarcane.html">
+            <img src="healthy_crop.jpg" alt="Healthy Sugarcane Crop" height="200" width="200">
+            </a>
+            <figcaption>
+            Fig 1. Healthy sugarcane crop grown using proper irrigation and nutrient management.
+            </figcaption>
+        </figure>
+    </div>
+
+    <div class="img">
+        <figure>
+            <a href="drip_irrigation_system.html">
+            <img src="main_drip_irr.png" alt="Drip Irrigation System" height="200" width="200">
+            </a>
+            <figcaption>
+                Fig 2. Drip Irrigation Used in sugarcane
+            </figcaption>
+        </figure>
+    </div>
+
+
+    <div class="img">
+        <figure>
+            <a href="soil_moisture_sensor.html"><img src="soil_moisture.jpg" alt="Soil Moisture Sensor" height="200" width="200"></a>
+            <figcaption>
+                Fig 3.Soil Moisture Sensor used in sugarcane
+            </figcaption>
+        </figure>
+    </div>
+
+    <div class="img">
+        <figure>
+            <a href="weather_monitoring_station.html"><img src="weather_bg.png" alt="Weather Monitorinng Station" height="200" width="200"></a>
+            <figcaption>
+                Fig 4. Weather Monitoring System 
+            </figcaption>
+        </figure>
+    </div>
+
+</div>
+    
+</body>
+</html>

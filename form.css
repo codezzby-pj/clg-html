@@ -1,0 +1,74 @@
+    .n{
+        width: 300px;
+        height: 30px;
+        padding-left: 15px;
+        padding-right: 10px;
+        transition-duration: 0.2s;
+    }
+    .n:focus {
+        outline: none;
+        border: 2px solid rgb(31, 75, 31);
+        border-radius: 8px;
+        background-color: #f0fff0;
+    }
+    .address{
+        transition-duration: 0.2s;
+    }
+    .address:focus{
+        outline: none;
+        border: 2px solid rgb(31, 75, 31);
+        border-radius: 8px;
+        background-color: #f0fff0;
+    }
+    button{
+        width: 100px;
+        height: 45px;
+        background-color:rgb(14, 41, 14);
+        color: antiquewhite;
+        border-radius: 12px;
+        border: solid;
+        border-color: rgb(152, 220, 152);
+        box-shadow: 5px 5px 10px rgb(14 , 41, 14);
+        transition-duration: 0.5s;
+
+    }
+    button:hover{
+        background-color: rgb(31, 75, 31);
+        color: bisque;
+        box-shadow: 5px 5px 10px rgb(31, 75, 31);
+    }
+    fieldset{
+        margin-top: 20px;
+        width: 500px;
+        margin-left: 30%;
+        background-color: beige;
+        border-radius: 12px;
+        border: solid;
+        border-color: rgb(20, 6, 6);
+        box-shadow: 5px 5px 10px rgb(20, 6, 6);
+    }
+    header{
+        width: 200px;
+        text-align: center;
+        margin-left: 500px;
+        background-color: #c6eacf;
+        color: rgb(36, 36, 4);
+        height: 25px;
+        margin-top: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 10px;
+
+    }
+    legend{
+        background-color: rgb(20, 6, 6);
+        color: aliceblue;
+        width: 200px;
+        height: 30px;
+        text-align: center;
+        padding-top: 7.5px;
+    }
+    body{
+        background-color:#7cb48a;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
