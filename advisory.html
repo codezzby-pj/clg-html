@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Advisory</title>
+
     <link rel="stylesheet" href="style.css">
+
     <style>
-        mark{
+        mark {
             border-radius: 8px;
             padding-left: 12px;
             padding-right: 12px;
             padding-top: 6px;
             padding-bottom: 6px;
         }
-        .offer-box{
+
+        .offer-box {
             margin-left: 350px;
             width: 500px;
             height: 300px;
@@ -27,32 +32,148 @@
             text-shadow: 2px 2px 3px #777;
             transition-duration: 0.2s;
         }
-        .offer-box:hover{
+
+        .offer-box:hover {
             background-color: #efbd69;
             border-color: #efbd69;
             border-radius: 35px;
             box-shadow: 0 0 15px #f7b84a;
             transform: scale(1.03);
         }
-
     </style>
 </head>
+
 <body>
-    <header><h1>Advisory-</h1></header>
+
+    <header>
+        <h1>Advisory-</h1>
+    </header>
+
     <br>
-    <h2><em>Plot Id: </em><mark style="background-color: #D9F2D0;">12345</mark></h2> <hr>
+
+    <h2>
+        <em>Plot Id: </em>
+        <mark style="background-color: #D9F2D0;">12345</mark>
+    </h2>
+
+    <hr>
+
     <br>
-    <h2><em>Farmer name: </em><mark style="background-color: #D9F2D0;">Sarvesh More</mark></h2> <hr>
+
+    <h2>
+        <em>Farmer name: </em>
+        <mark style="background-color: #D9F2D0;">Sarvesh More</mark>
+    </h2>
+
+    <hr>
+
     <br>
-    <h2><em>Soil Moisture: </em><mark style="background-color: #D9F2D0;">145</mark></h2> <hr>    
+
+    <h2>
+        <em>Soil Moisture: </em>
+        <mark id="soilMoisture" style="background-color: #D9F2D0;">45%</mark>
+    </h2>
+
+    <hr>
+
     <br>
-    <h2><em>Recommended Irrigation Duration: </em><mark style="background-color: #D9F2D0;">30 minutes</mark></h2> <hr>
+
+    <h2>
+        <em>Rainfall Forecast: </em>
+        <mark id="rainfall" style="background-color: #D9F2D0;">No Rain</mark>
+    </h2>
+
+    <hr>
+
     <br>
-    <h2><em>Water Stress Level: </em><mark style="background-color: #D9F2D0;">Low</mark></h2> <hr>
+
+    <h2>
+        <em>Crop Stage: </em>
+        <mark id="cropStage" style="background-color: #D9F2D0;">Vegetative</mark>
+    </h2>
+
+    <hr>
+
     <br>
-    <button class="offer-box"><h2>🎉Special Offer!!!🎉</h2>
-            <p>Get 20% off on all irrigation solutions ✨✨</p>
-            <p>Valid till date - 31st December 2029 📅</p>
-            <p>Click to this button to know more &#127915;→</p></button>
+
+    <h2>
+        <em>Irrigation Recommendation: </em>
+        <mark id="recommendation" style="background-color: #D9F2D0;">
+            Monitor Soil Moisture
+        </mark>
+    </h2>
+
+    <hr>
+
+    <br>
+
+    <h2>
+        <em>Recommended Irrigation Duration: </em>
+        <mark style="background-color: #D9F2D0;">30 minutes</mark>
+    </h2>
+
+    <hr>
+
+    <br>
+
+    <h2>
+        <em>Water Stress Level: </em>
+        <mark style="background-color: #D9F2D0;">Low</mark>
+    </h2>
+
+    <hr>
+
+    <br>
+
+    <button class="offer-box">
+        <h2>🎉Special Offer!!!🎉</h2>
+
+        <p>Get 20% off on all irrigation solutions ✨✨</p>
+
+        <p>Valid till date - 31st December 2029 📅</p>
+
+        <p>Click to this button to know more &#127915;→</p>
+    </button>
+
+
+    <script>
+
+        // Declare variables
+        let soilMoisture = 45;
+        let rainfallForecast = "No Rain";
+        let cropStage = "Vegetative";
+
+        // Variable for recommendation
+        let irrigationRecommendation;
+
+        // Apply decision rules
+        if (rainfallForecast === "Rain Expected") {
+            irrigationRecommendation = "Postpone Irrigation";
+        }
+        else if (soilMoisture < 30) {
+            irrigationRecommendation = "Irrigation Required Immediately";
+        }
+        else if (soilMoisture >= 30 && soilMoisture <= 50) {
+            irrigationRecommendation = "Monitor Soil Moisture";
+        }
+        else if (soilMoisture > 50) {
+            irrigationRecommendation = "Irrigation Not Required";
+        }
+
+        // Display recommendation on the webpage
+        document.getElementById("recommendation").innerHTML =
+            irrigationRecommendation;
+
+        // Display rainfall forecast
+        document.getElementById("rainfall").innerHTML =
+            rainfallForecast;
+
+        // Display crop stage
+        document.getElementById("cropStage").innerHTML =
+            cropStage;
+
+    </script>
+
 </body>
+
 </html>

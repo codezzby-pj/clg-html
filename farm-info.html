@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Farm information</title>
+
     <link rel="stylesheet" href="style.css">
+
     <style>
-        #i{
+        #i {
             margin-right: 25px;
         }
-        #ol{
+
+        #ol {
             list-style-type: decimal;
             margin: 0 auto 20px auto;
             padding-left: 25px;
@@ -17,7 +22,8 @@
             text-align: left;
             list-style-position: outside;
         }
-        #ul{
+
+        #ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
@@ -25,7 +31,8 @@
             justify-content: center;
             align-items: center;
         }
-        #soil{
+
+        #soil {
             display: inline-block;
             color: white;
             width: 130px;
@@ -37,16 +44,18 @@
             text-align: center;
             box-shadow: 5px 5px 10px #032416;
             margin-right: 12px;
-             border-radius: 15px;
-            }
-        #soil:hover{
+            border-radius: 15px;
+        }
+
+        #soil:hover {
             background-color: rgb(4, 161, 4);
-            }
-        #soil:active{
+        }
+
+        #soil:active {
             opacity: 0.4;
         }
-        
-        #sensor{
+
+        #sensor {
             text-align: center;
             display: inline-block;
             color: white;
@@ -59,14 +68,17 @@
             box-shadow: 5px 5px 10px #032416;
             margin-right: 12px;
             border-radius: 15px;
-            }
-        #sensor:hover{
+        }
+
+        #sensor:hover {
             background-color: rgb(4, 161, 4);
         }
-        #sensor:active{
+
+        #sensor:active {
             opacity: 0.4;
         }
-        #humidity{
+
+        #humidity {
             text-align: center;
             display: inline-block;
             color: white;
@@ -75,19 +87,21 @@
             box-sizing: border-box;
             padding: 6px 12px;
             background-color: #2C5745;
-            transition: background-color 0.25s; 
+            transition: background-color 0.25s;
             box-shadow: 5px 5px 10px #032416;
             margin-right: 12px;
-             border-radius: 15px;
+            border-radius: 15px;
         }
-        #humidity:hover{
+
+        #humidity:hover {
             background-color: rgb(4, 161, 4);
         }
-        #humidity:active{
+
+        #humidity:active {
             opacity: 0.4;
         }
 
-        #rain{
+        #rain {
             text-decoration: none;
             text-align: center;
             display: inline-block;
@@ -97,77 +111,209 @@
             box-sizing: border-box;
             padding: 6px 12px;
             background-color: #2C5745;
-            transition: background-color 0.25s; 
+            transition: background-color 0.25s;
             vertical-align: top;
             box-shadow: 5px 5px 10px #032416;
             margin-right: 12px;
             border-radius: 15px;
         }
-        #rain:hover{
+
+        #rain:hover {
             background-color: rgb(4, 161, 4);
         }
-        #rain:active{
+
+        #rain:active {
             opacity: 0.4;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: antiquewhite;
         }
-        .container{
+
+        .container {
             text-align: center;
         }
-        
+
+        /* Farm information box */
+        #farmInformation {
+            margin: 30px auto;
+            padding: 20px;
+            width: 500px;
+            background-color: #D9F2D0;
+            color: #1B4332;
+            border: 2px solid #2C5745;
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px #032416;
+            text-align: left;
+        }
+
+        #farmInformation h2 {
+            text-align: center;
+        }
     </style>
 </head>
+
 <body>
+
     <div class="container">
-        <header><h1>Farm information</h1></header>
-            <ul><li><b>Irrigation Workflow</b></li>
-                    <ol type="1">
-                        <li><i>Collect Farm Data – Enter the farm/plot details and crop information.</i></li>
-                        <li><i>Monitor Soil Moisture – Check the soil moisture level using sensors.</i></li>
-                        <li><i>Check Weather Conditions – Consider the current weather and forecast.</i></li>
-                        <li><i>Analyze Crop Stage – Identify the current growth stage of the sugarcane.</i></li>
-                        <li><i>Generate Irrigation Recommendation – Use the available information to determine whether irrigation is required.</i></li>
-                        <li><i>Apply Required Irrigation – Irrigate the field according to the recommendation.</i></li>
-                        <li><i>Monitor Again – Recheck soil moisture and field conditions after irrigation.</i></li>
 
-                    </ol>
+        <header>
+            <h1>Farm information</h1>
+        </header>
+
+        <ul>
+            <li><b>Irrigation Workflow</b></li>
+
+            <ol type="1">
+
+                <li>
+                    <i>Collect Farm Data – Enter the farm/plot details and crop information.</i>
+                </li>
+
+                <li>
+                    <i>Monitor Soil Moisture – Check the soil moisture level using sensors.</i>
+                </li>
+
+                <li>
+                    <i>Check Weather Conditions – Consider the current weather and forecast.</i>
+                </li>
+
+                <li>
+                    <i>Analyze Crop Stage – Identify the current growth stage of the sugarcane.</i>
+                </li>
+
+                <li>
+                    <i>Generate Irrigation Recommendation – Use the available information to determine whether irrigation is required.</i>
+                </li>
+
+                <li>
+                    <i>Apply Required Irrigation – Irrigate the field according to the recommendation.</i>
+                </li>
+
+                <li>
+                    <i>Monitor Again – Recheck soil moisture and field conditions after irrigation.</i>
+                </li>
+
+            </ol>
+        </ul>
+
+
+        <nav>
+
+            <ul id="ul">
+
+                <li id="i">
+                    <b>Sensors Used-</b>
+                </li>
+
+                <li id="soil">
+                    <a href="#"><i>Soil Moisture Sensor</i></a>
+                </li>
+
+                <li id="sensor">
+                    <a href="#"><i>Temperature Sensor</i></a>
+                </li>
+
+                <li id="humidity">
+                    <a href="#"><i>Humidity Sensor</i></a>
+                </li>
+
+                <li id="rain">
+                    <a href="#"><i>Rainfall Sensor</i></a>
+                </li>
+
             </ul>
-    <nav>
-    <ul id="ul">
-        <li id="i"><b>Sensors Used-</b></li>
 
-        <li id="soil">
-            <a href="#"><i>Soil Moisture Sensor</i></a>
-        </li>
-
-        <li id="sensor">
-            <a href="#"><i>Temperature Sensor</i></a>
-        </li>
-
-        <li id="humidity">
-            <a href="#"><i>Humidity Sensor</i></a>
-        </li>
-
-        <li id="rain">
-            <a href="#"><i>Rainfall Sensor</i></a>
-        </li>
-    </ul>
-</nav>
+        </nav>
 
 
-    <dl>
-        <dt><b>Crop Stages</b></dt>
-        <dd><i>Germination</i></dd>
-        <dd><i>Vegetative</i></dd>
-        <dd><i>Reproductive</i></dd>
-        <dd><i>Maturation</i></dd>
-    </dl>
+        <dl>
 
-    <footer>
-        Copyright since 2026
-    </footer>
+            <dt><b>Crop Stages</b></dt>
+
+            <dd><i>Germination</i></dd>
+            <dd><i>Vegetative</i></dd>
+            <dd><i>Reproductive</i></dd>
+            <dd><i>Maturation</i></dd>
+
+        </dl>
+
+
+        <!-- JavaScript Object Information -->
+
+        <div id="farmInformation">
+
+            <h2>Farm Information</h2>
+
+            <p><b>Farmer Name:</b> <span id="farmerName"></span></p>
+
+            <p><b>Plot ID:</b> <span id="plotId"></span></p>
+
+            <p><b>Crop Stage:</b> <span id="cropStage"></span></p>
+
+            <p><b>Soil Moisture:</b> <span id="soilMoisture"></span></p>
+
+            <p><b>Area:</b> <span id="area"></span></p>
+
+            <p><b>Pump Status:</b> <span id="pumpStatus"></span></p>
+
+        </div>
+
+
+        <footer>
+            Copyright since 2026
+        </footer>
+
     </div>
+
+
+    <script>
+
+        // JavaScript object representing a sugarcane farm
+        let sugarcaneFarm = {
+
+            farmerName: "Sarvesh More",
+
+            plotId: "12345",
+
+            cropStage: "Vegetative",
+
+            soilMoisture: 45,
+
+            area: "2 Acres",
+
+            pumpStatus: "ON",
+
+            // Method to display farm information
+            displayFarmInformation: function () {
+
+                document.getElementById("farmerName").innerHTML =
+                    this.farmerName;
+
+                document.getElementById("plotId").innerHTML =
+                    this.plotId;
+
+                document.getElementById("cropStage").innerHTML =
+                    this.cropStage;
+
+                document.getElementById("soilMoisture").innerHTML =
+                    this.soilMoisture + "%";
+
+                document.getElementById("area").innerHTML =
+                    this.area;
+
+                document.getElementById("pumpStatus").innerHTML =
+                    this.pumpStatus;
+            }
+        };
+
+
+        // Calling the method
+        sugarcaneFarm.displayFarmInformation();
+
+    </script>
+
 </body>
+
 </html>

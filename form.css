@@ -37,6 +37,24 @@
         color: bisque;
         box-shadow: 5px 5px 10px rgb(31, 75, 31);
     }
+    button[type="reset"]{
+        width: 100px;
+        height: 45px;
+        background-color: rgb(20, 6, 6);
+        color: antiquewhite;
+        border-radius: 12px;
+        border: solid;
+        border-color: rgb(152, 220, 152);
+        box-shadow: 5px 5px 10px rgb(20, 6, 6);
+        transition-duration: 0.5s;
+        margin-left: 15px;
+    }
+
+    button[type="reset"]:hover{
+        background-color: rgb(60, 30, 30);
+        color: bisque;
+        box-shadow: 5px 5px 10px rgb(60, 30, 30);
+    }
     fieldset{
         margin-top: 20px;
         width: 500px;

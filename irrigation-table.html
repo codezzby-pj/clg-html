@@ -1,62 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-<link rel="stylesheet" href="table.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Irrigation Table</title>
+
+    <link rel="stylesheet" href="table.css">
 </head>
+
 <body>
-<table>
-    <caption class="caption">Irrigation Table</caption>
-<thead>
-<tr>
-<th class="newth" colspan="14">Irrigation Table</th>
-</tr>
-<tr>
-<th colspan="2">Plot Name</th>
-<th colspan="2">Plot Id</th>
-<th colspan="2">Farmer Name</th>
-<th colspan="2">Soil Moisture (%)</th>
-<th colspan="2">Weather</th>
-<th colspan="2">Irrigation Recommendation</th>
-<th colspan="2">Water Requirement (Liters)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2">A</td>
-<td colspan="2">12345</td>
-<td colspan="2">Sarvesh More</td>
-<td colspan="2">145</td>
-<td colspan="2">Sunny</td>
-<td colspan="2">High</td>
-<td colspan="2">200</td>
-</tr>
-<tr>
-<td colspan="2">B</td>
-<td colspan="2">23578</td>
-<td colspan="2">Sarvesh More</td>
-<td colspan="2">145</td>
-<td colspan="2">Sunny</td>
-<td colspan="2">High</td>
-<td colspan="2">200</td>
-</tr>
-<tr>
-<td colspan="2">C</td>
-<td colspan="2">34689</td>
-<td colspan="2">Sarvesh More</td>
-<td colspan="2">145</td>
-<td colspan="2">Sunny</td>
-<td colspan="2">High</td>
-<td colspan="2">200</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<th class="tfooth" colspan="14">Total Water Requirement: 600
-Liters</th>
-</tr>
-</table>
+
+    <table>
+        <caption class="caption">Irrigation Table</caption>
+
+        <thead>
+            <tr>
+                <th class="newth" colspan="14">Irrigation Table</th>
+            </tr>
+
+            <tr>
+                <th colspan="2">Plot Name</th>
+                <th colspan="2">Plot Id</th>
+                <th colspan="2">Farmer Name</th>
+                <th colspan="2">Soil Moisture (%)</th>
+                <th colspan="2">Weather</th>
+                <th colspan="2">Irrigation Recommendation</th>
+                <th colspan="2">Water Requirement (Liters)</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td colspan="2">A</td>
+                <td colspan="2">12345</td>
+                <td colspan="2">Sarvesh More</td>
+                <td colspan="2">45</td>
+                <td colspan="2">Sunny</td>
+                <td colspan="2" id="recommendationA"></td>
+                <td colspan="2" id="waterA"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">B</td>
+                <td colspan="2">23578</td>
+                <td colspan="2">Sarvesh More</td>
+                <td colspan="2">45</td>
+                <td colspan="2">Sunny</td>
+                <td colspan="2">High</td>
+                <td colspan="2">200</td>
+            </tr>
+
+            <tr>
+                <td colspan="2">C</td>
+                <td colspan="2">34689</td>
+                <td colspan="2">Sarvesh More</td>
+                <td colspan="2">45</td>
+                <td colspan="2">Sunny</td>
+                <td colspan="2">High</td>
+                <td colspan="2">200</td>
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th class="tfooth" colspan="14" id="totalWater">
+                    Total Water Requirement: 600 Liters
+                </th>
+            </tr>
+        </tfoot>
+
+    </table>
+
+
+    <script>
+
+        // Declare variables
+        let farmerName = "Sarvesh More";
+        let plotId = "12345";
+        let currentSoilMoisture = 45;
+        let requiredSoilMoisture = 60;
+
+        // Calculate moisture deficit
+        let moistureDeficit = requiredSoilMoisture - currentSoilMoisture;
+
+        // Calculate water requirement
+        let waterRequired = moistureDeficit * 10;
+
+        // Determine irrigation status
+        let irrigationStatus;
+
+        if (moistureDeficit > 0) {
+            irrigationStatus = "Irrigation Required";
+        } else {
+            irrigationStatus = "Irrigation Not Required";
+        }
+
+        // Display irrigation status using alert()
+        alert(
+            "Farmer Name: " + farmerName +
+            "\nPlot ID: " + plotId +
+            "\nCurrent Soil Moisture: " + currentSoilMoisture + "%" +
+            "\nRequired Soil Moisture: " + requiredSoilMoisture + "%" +
+            "\nMoisture Deficit: " + moistureDeficit + "%" +
+            "\nWater Required: " + waterRequired + " Liters" +
+            "\nStatus: " + irrigationStatus
+        );
+
+        // Display result using document.write()
+        document.write(
+            "<h2>Irrigation Calculation</h2>" +
+            "<p><b>Farmer Name:</b> " + farmerName + "</p>" +
+            "<p><b>Plot ID:</b> " + plotId + "</p>" +
+            "<p><b>Current Soil Moisture:</b> " + currentSoilMoisture + "%</p>" +
+            "<p><b>Required Soil Moisture:</b> " + requiredSoilMoisture + "%</p>" +
+            "<p><b>Moisture Deficit:</b> " + moistureDeficit + "%</p>" +
+            "<p><b>Water Required:</b> " + waterRequired + " Liters</p>" +
+            "<p><b>Irrigation Status:</b> " + irrigationStatus + "</p>"
+        );
+
+    </script>
+
 </body>
+
 </html>

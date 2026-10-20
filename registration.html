@@ -1,76 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registration Form</title>
-<link rel="stylesheet" href="form.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Farmer Registration Form</title>
+
+    <link rel="stylesheet" href="form.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        .error {
+            color: red;
+            margin-left: 10px;
+        }
+
+        .invalid {
+            border: 2px solid red;
+        }
+    </style>
 </head>
+
 <body>
+
     <header>Farmer Registration Form</header>
+
     <fieldset>
-    <legend>Registration Form</legend>
-    <form >
-    <label>Name:</label>
-    <input class="n" type = "text" name = "name" placeholder = "Enter your name" required>
-    <br>
-    <br>
-    <label>Plot ID:</label>
-    <input class="n" type = "number" name = "plot_id" placeholder = "Enter your Plot ID" required> <br>
-    <br>
-    <br>
-    <label>Phone No:</label>
-    <input class="n" type = "number" name = "phone_no" placeholder = "Enter your Phone No" required> <br>
-    <br>
-    <br>
-    <label>Email:</label>
-    <input class="n" type = "email" name = "email" placeholder = "Enter your Email" required> <br>
-    <br> 
-    <br>
-    <label>Address:</label>
-    <textarea class="address" rows = "5" cols = "50" name = "description" placeholder = "Enter your address" required>
-    </textarea>
-    <br>
-    <br>
-    <label>Village:</label>
-    <input class="n" type = "text" name = "Village" placeholder = "Enter your village name" required>
-    <br>
-    <br>
-    <label>Crop Stage:</label>
-    <input class="n" type = "text" name = "Crop_stage" placeholder = "Enter crop stage" required>
-    <br>
-    <br>
-    <label>Soil Type:</label>
-    <input class="n" type = "text" name = "Soil_type" placeholder = "Enter soil type" required>
-    <br>
-    <br>
-    <label>Irrigation Method:</label>
-    <input class="n" type = "text" name = "Irrigation_method" placeholder = "Enter irrigation method" required>
-    <br>
-    <br>
-    <label>Date:</label>
-    <input class="n" type = "Date" name = "date" placeholder = "Enter date" required>
-    <br>
-    <br>
-    <label>Upload Farm Photo:</label>
-    <input class="n" type = "file" name = "file" placeholder = "Upload farm photo" required> 
-    <br>
-    <br>
-    <label>How many sugarcame fields You have?:</label>
-    <input class="sugarcane_fields" type = "radio" name = "Sugarcane" value = "on"> 1
-    <input class="more_than_1" type = "radio" name = "more than 1" value = "on"> more than 1
-    <br>
-    <br>
-    <button type = "submit" name = "submit">Submit</button>
-    <!-- Mobile Number
-    ● Email
-    ● Plot ID
-    ● Village
-    ● Crop Stage
-    ● Soil Type
-    ● Irrigation Method
-    ● Date
-    ● File Upload (Farm Photo) -->
-    </form>
-    </body>
-    </html>
+
+        <legend>Farmer Registration Form</legend>
+
+        <form id="registrationForm" name="registrationForm">
+
+            <!-- Farmer Name -->
+            <label for="name">Farmer Name:</label>
+
+            <input type="text" id="name" name="name" placeholder="Enter Farmer Name">
+
+            <span id="nameError" class="error"></span>
+
+            <br><br>
+
+
+            <!-- Mobile Number -->
+            <label for="phone_no">Mobile Number:</label>
+
+            <input type="tel" id="phone_no" name="phone_no" placeholder="Enter 10 digit mobile number">
+
+            <span id="mobileError" class="error"></span>
+
+            <br><br>
+
+
+            <!-- Email -->
+            <label for="email">Email:</label>
+
+            <input type="email" id="email" name="email" placeholder="Enter Email">
+
+            <span id="emailError" class="error"></span>
+
+            <br><br>
+
+
+            <!-- Plot ID -->
+            <label for="plot_id">Plot ID:</label>
+
+            <input type="text" id="plot_id" name="plot_id" placeholder="Enter Plot ID">
+
+            <span id="plotError" class="error"></span>
+
+            <br><br>
+
+
+            <!-- Village -->
+            <label for="village">Village:</label>
+
+            <input type="text" id="village" name="village" placeholder="Enter Village Name">
+
+            <span id="villageError" class="error"></span>
+
+            <br><br>
+
+
+            <!-- Crop Stage -->
+            <label for="crop_stage">Crop Stage:</label>
+
+            <select id="crop_stage" name="crop_stage">
+
+                <option value="">Select Crop Stage</option>
+                <option value="seedling">Seedling</option>
+                <option value="vegetative">Vegetative</option>
+                <option value="flowering">Flowering</option>
+                <option value="harvesting">Harvesting</option>
+
+            </select>
+
+            <span id="cropStageError" class="error"></span>
+
+            <br><br>
+
+
+            <!-- Soil Type -->
+            <label for="soil_type">Soil Type:</label>
+
+            <select id="soil_type" name="soil_type">
+
+                <option value="">Select Soil Type</option>
+                <option value="black">Black Soil</option>
+                <option value="red">Red Soil</option>
+                <option value="alluvial">Alluvial Soil</option>
+                <option value="sandy">Sandy Soil</option>
+
+            </select>
+
+            <span id="soilTypeError" class="error"></span>
+
+            <br><br>
+
+
+            <!-- Irrigation Method -->
+            <label for="irrigation_method">Irrigation Method:</label>
+
+            <select id="irrigation_method" name="irrigation_method">
+
+                <option value="">Select Irrigation Method</option>
+                <option value="drip">Drip Irrigation</option>
+                <option value="sprinkler">Sprinkler Irrigation</option>
+                <option value="surface">Surface Irrigation</option>
+                <option value="manual">Manual Irrigation</option>
+
+            </select>
+
+            <span id="irrigationError" class="error"></span>
+
+            <br><br>
+
+
+            <!-- Soil Moisture -->
+            <label for="soil_moisture">Soil Moisture (%):</label>
+
+            <input type="number" id="soil_moisture" name="soil_moisture" min="0" max="100"
+                placeholder="Enter value from 0 to 100">
+
+            <br><br>
+
+
+            <!-- Registration Date -->
+            <label for="registration_date">Registration Date:</label>
+
+            <input type="date" id="registration_date" name="registration_date">
+
+            <span id="dateError" class="error"></span>
+
+            <br><br>
+
+
+            <!-- Farm Photo -->
+            <label for="farm_photo">Farm Photo:</label>
+
+            <input type="file" id="farm_photo" name="farm_photo">
+
+            <br><br>
+
+
+            <!-- Buttons -->
+            <button type="submit" id="submitBtn" name="submit">
+                Submit
+            </button>
+
+            <button type="reset" id="resetBtn" name="reset">
+                Reset
+            </button>
+
+        </form>
+
+    </fieldset>
+
+
+    <!-- jQuery Task 2, Task 3 and Task 4 Validation -->
+    <script>
+
+        $(document).ready(function () {
+
+            $("#registrationForm").submit(function (event) {
+
+                event.preventDefault();
+
+                // Clear previous error messages
+                $("#nameError").text("");
+                $("#mobileError").text("");
+                $("#emailError").text("");
+                $("#plotError").text("");
+                $("#villageError").text("");
+                $("#cropStageError").text("");
+                $("#soilTypeError").text("");
+                $("#irrigationError").text("");
+                $("#dateError").text("");
+
+                // Remove previous highlighting
+                $("#crop_stage").removeClass("invalid");
+                $("#soil_type").removeClass("invalid");
+                $("#irrigation_method").removeClass("invalid");
+                $("#registration_date").removeClass("invalid");
+
+                let isValid = true;
+
+
+                // Get values
+                let name = $("#name").val().trim();
+                let mobile = $("#phone_no").val().trim();
+                let email = $("#email").val().trim();
+                let plotId = $("#plot_id").val().trim();
+                let village = $("#village").val().trim();
+
+
+                // ---------------- TASK 2 ----------------
+
+                // Farmer Name validation
+                if (name === "") {
+
+                    $("#nameError").text(
+                        "Farmer Name cannot be empty"
+                    );
+
+                    isValid = false;
+
+                }
+                else if (!/^[A-Za-z ]+$/.test(name)) {
+
+                    $("#nameError").text(
+                        "Farmer Name must contain alphabets and spaces only"
+                    );
+
+                    isValid = false;
+
+                }
+
+
+                // Plot ID validation
+                if (plotId === "") {
+
+                    $("#plotError").text(
+                        "Plot ID cannot be empty"
+                    );
+
+                    isValid = false;
+
+                }
+
+
+                // Village validation
+                if (village === "") {
+
+                    $("#villageError").text(
+                        "Village cannot be empty"
+                    );
+
+                    isValid = false;
+
+                }
+
+
+                // ---------------- TASK 3 ----------------
+
+                // Mobile Number validation
+                if (mobile === "") {
+
+                    $("#mobileError").text(
+                        "Mobile Number cannot be empty"
+                    );
+
+                    isValid = false;
+
+                }
+                else if (!/^[6-9][0-9]{9}$/.test(mobile)) {
+
+                    $("#mobileError").text(
+                        "Enter a valid 10-digit Indian mobile number"
+                    );
+
+                    isValid = false;
+
+                }
+
+
+                // Email validation
+                if (email === "") {
+
+                    $("#emailError").text(
+                        "Email cannot be empty"
+                    );
+
+                    isValid = false;
+
+                }
+                else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+
+                    $("#emailError").text(
+                        "Enter a valid email address"
+                    );
+
+                    isValid = false;
+
+                }
+
+
+                // ---------------- TASK 4 ----------------
+
+                // Crop Stage validation
+                if ($("#crop_stage").val() === "") {
+
+                    $("#cropStageError").text(
+                        "Please select Crop Stage"
+                    );
+
+                    $("#crop_stage").addClass("invalid");
+
+                    isValid = false;
+
+                }
+
+
+                // Soil Type validation
+                if ($("#soil_type").val() === "") {
+
+                    $("#soilTypeError").text(
+                        "Please select Soil Type"
+                    );
+
+                    $("#soil_type").addClass("invalid");
+
+                    isValid = false;
+
+                }
+
+
+                // Irrigation Method validation
+                if ($("#irrigation_method").val() === "") {
+
+                    $("#irrigationError").text(
+                        "Please select Irrigation Method"
+                    );
+
+                    $("#irrigation_method").addClass("invalid");
+
+                    isValid = false;
+
+                }
+
+
+                // Registration Date validation
+                let registrationDate = $("#registration_date").val();
+
+                if (registrationDate === "") {
+
+                    $("#dateError").text(
+                        "Registration Date cannot be empty"
+                    );
+
+                    $("#registration_date").addClass("invalid");
+
+                    isValid = false;
+
+                }
+                else {
+
+                    // Get today's date
+                    let today = new Date();
+
+                    let year = today.getFullYear();
+                    let month = String(today.getMonth() + 1).padStart(2, "0");
+                    let day = String(today.getDate()).padStart(2, "0");
+
+                    let todayDate = year + "-" + month + "-" + day;
+
+
+                    // Prevent future date
+                    if (registrationDate > todayDate) {
+
+                        $("#dateError").text(
+                            "Registration Date cannot be in the future"
+                        );
+
+                        $("#registration_date").addClass("invalid");
+
+                        isValid = false;
+
+                    }
+
+                }
+
+
+                // ---------------- FINAL RESULT ----------------
+
+                if (isValid) {
+
+                    alert("All validation successful!");
+
+                }
+
+            });
+
+
+            // Reset form and clear errors
+            $("#resetBtn").click(function () {
+
+                $("#registrationForm")[0].reset();
+
+                $("#nameError").text("");
+                $("#mobileError").text("");
+                $("#emailError").text("");
+                $("#plotError").text("");
+                $("#villageError").text("");
+                $("#cropStageError").text("");
+                $("#soilTypeError").text("");
+                $("#irrigationError").text("");
+                $("#dateError").text("");
+
+                $(".invalid").removeClass("invalid");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
